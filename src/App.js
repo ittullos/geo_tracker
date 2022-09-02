@@ -41,10 +41,6 @@ function App() {
             || prevLocation.long !== longitude)
             && (prevLocation.lat !== ''
             && prevLocation.long !== '')) {
-              // console.log("made it here")
-              console.log(latitude)
-              console.log(longitude)
-              console.log(prevLocation)
               setMileage(prevMileage => prevMileage + 
                 (geolib.getDistance({
                   latitude: latitude,
@@ -52,11 +48,9 @@ function App() {
                   latitude: prevLocation.lat,
                   longitude: prevLocation.long
                 })))
-                console.log(mileage)
+                console.log("Mileage in meters:", mileage)
           }
-          setPrevLocation({lat: latitude, long: longitude})
-          // console.log("latitude:", latitude)
-          // console.log("longitude:", longitude)          
+          setPrevLocation({lat: latitude, long: longitude})        
         })
       }, 3000)
     } else {
